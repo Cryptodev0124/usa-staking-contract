@@ -7,7 +7,7 @@ use anchor_lang::prelude::*;
 use anchor_lang::solana_program::entrypoint::ProgramResult;
 use instructions::*;
 
-declare_id!("7awsjqgYHMskE4bYtJfvVUidDQ7djgyjQg3gCw1PgpoK");
+declare_id!("EoTc7b3Cn4smXnKDrrNFSJQa8VPjgZ53bDti9SbmCyrU");
 
 #[program]
 pub mod usa_staking {
@@ -48,5 +48,9 @@ pub mod usa_staking {
 
     pub fn claim_rewards(ctx: Context<ClaimRewards>) -> ProgramResult {
         instructions::claim_rewards::handler(ctx)
+    }
+
+    pub fn compound(ctx: Context<Compound>) -> ProgramResult {
+        instructions::compound::handler(ctx)
     }
 }
